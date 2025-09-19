@@ -79,42 +79,6 @@ def final_alert(row):
     return 1 if votes >= 2 else 0
 
 
-# row = {
-#   "time": "2025-09-19T11:24:38.095000",
-#   "host_cpu_util_pct": 8.6068638856573,
-#   "host_cpu_usage_per_sec": 68.8434695912263,
-#   "db_cpu_time_ratio": 0,
-#   "db_cpu_usage_per_sec": 0,
-#   "cpu_usage_per_txn": 0,
-#   "bg_cpu_usage_per_sec": 0,
-#   "buffer_cache_hit_ratio": 100,
-#   "shared_pool_free_pct": 95.2063103561985,
-#   "library_cache_hit_ratio": 100,
-#   "sessions_total": 24,
-#   "active_sessions": "null",
-#   "logons_per_sec": 0,
-#   "process_count": "null",
-#   "physical_reads_per_sec": 0,
-#   "physical_writes_per_sec": 0,
-#   "redo_writes_per_sec": 0,
-#   "io_requests_per_sec": 2.12695247590562,
-#   "io_throughput_mb_sec": 0.0332336324360253,
-#   "avg_read_latency_ms": "null",
-#   "avg_write_latency_ms": "null",
-#   "db_time_ms": 0,
-#   "cpu_time_ms": "null",
-#   "user_io_wait_ms": "null",
-#   "system_io_wait_ms": "null",
-#   "log_file_sync_wait_ms": "null",
-#   "concurrency_wait_ms": "null",
-#   "txn_per_sec": "null",
-#   "user_calls_per_sec": 0,
-#   "executions_per_sec": 0.398803589232303,
-#   "parse_count_per_sec": "null",
-#   "hard_parse_ratio_pct": "null",
-#   "sga_free_mb": 31,
-#   "pga_used_mb": 35
-# }
-#
-#
-# detect_anomaly(row)
+# db_perf_log_insert
+def insert_ser_perf_log(row : dict) :
+    return insert_perf_log(row)
