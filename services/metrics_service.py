@@ -1,4 +1,4 @@
 from mappers.metrics_mapper import *
 
-def get_perf_metrics():
-    return get_perf_metrics()
+def get_ser_metrics():
+    return get_mapper_metrics()

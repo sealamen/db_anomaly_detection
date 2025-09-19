@@ -1,6 +1,6 @@
 from db_conn import get_pool
 
-def get_perf_metrics():
+def get_mapper_metrics():
     pool = get_pool("target_db")   # 현재는 db1만 사용
     with pool.acquire() as conn:
         with conn.cursor() as cur:
