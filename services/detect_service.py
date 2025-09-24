@@ -60,7 +60,7 @@ def detect_anomaly(row_dict):
     mse = np.mean(np.square(ae_scaled - recon), axis=1)
 
     # 임계값: 평균 + 3*표준편차
-    recon_thresh = mse.mean() + 3 * mse.std()
+    recon_thresh = mse.mean() + 2 * mse.std()
     df_numeric["AE_Pred"] = (mse > recon_thresh).astype(int)
 
     # 5. Final Alert
@@ -77,7 +77,6 @@ def detect_anomaly(row_dict):
 def final_alert(row):
     votes = row[['IF_Pred', 'SVM_Pred', 'AE_Pred']].sum()
     return 1 if votes >= 2 else 0
-
 
 # db_perf_log_insert
 def insert_ser_perf_log(row : dict) :
