@@ -13,8 +13,11 @@ def detect_anomaly(row_dict):
     # 1. 전처리
     df.replace("null", 0, inplace=True)
 
+    # 컬럼명을 전부 대문자로 변환
+    df.columns = df.columns.str.upper()
+
     # 숫자형 컬럼만 선택, time 제거
-    df_numeric = df.select_dtypes(include=['float64', 'int64']).drop(columns=['time'], errors='ignore') # 숫자형 컬럼만 선택 (time 제거)
+    df_numeric = df.select_dtypes(include=['float64', 'int64']).drop(columns=['TIME'], errors='ignore') # 숫자형 컬럼만 선택 (time 제거)
 
 
     # 2. One-Class SVM 예측
